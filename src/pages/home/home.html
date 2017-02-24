@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<form>
+  <ion-item>
+    <ion-label floating center>Binary</ion-label>
+    <ion-input type="text" [(ngModel)]="binModel" [ngModelOptions]="{standalone: true}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Hexadecimal</ion-label>
+    <ion-input type="text" [(ngModel)]="hexModel" [ngModelOptions]="{standalone: true}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Decimal</ion-label>
+    <ion-input type="text" [(ngModel)]="decModel" [ngModelOptions]="{standalone: true}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Octal</ion-label>
+    <ion-input type="text" [(ngModel)]="octModel" [ngModelOptions]="{standalone: true}"></ion-input>
+  </ion-item>
+</form>
+</ion-content>
