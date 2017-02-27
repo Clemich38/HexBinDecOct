@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -15,7 +16,7 @@ export class HomePage
   public octStr: string;
   public errorMsg: string;
 
-  constructor(public navCtrl: NavController)
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController)
   {
     this.binStr = "1";
     this.hexStr = "1";
@@ -29,8 +30,9 @@ export class HomePage
   // from: value base (2: binary, 8: octal, 10: decimal, 16: hexadecimal)
   private Convert(value, from)
   {
-    // Remove spaces
-    value = value.split(' ').join('');
+    
+  // Remove spaces
+  value = value.split(' ').join('');
 
     if (parseInt(value, from) <= Number.MAX_SAFE_INTEGER)
     {
@@ -41,7 +43,10 @@ export class HomePage
       this.errorMsg = "";
     }
     else if (value)
+    {
       this.errorMsg = "Number is to big!";
+      this.showAlert();
+    }
     else
       this.errorMsg = "";
   }
@@ -99,4 +104,12 @@ export class HomePage
     this.Convert(value, 8);
   }
 
+  private showAlert() {
+    let alert = this.alertCtrl.create({
+      title: this.errorMsg,
+      subTitle: '',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
 }
