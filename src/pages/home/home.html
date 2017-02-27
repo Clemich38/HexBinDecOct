@@ -11,19 +11,22 @@
 <form>
   <ion-item>
     <ion-label text-right stacked>Binary</ion-label>
-    <ion-input text-right type="text" [(ngModel)]="binModel" [ngModelOptions]="{standalone: true}"></ion-input>
+    <ion-input text-right type="text" [(ngModel)]="binModel" pattern="[0-1 ]*" [ngModelOptions]="{standalone: true}"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label text-right stacked>Hexadecimal</ion-label>
-    <ion-input text-right type="text" [(ngModel)]="hexModel" [ngModelOptions]="{standalone: true}"></ion-input>
+    <ion-input text-right type="text" [(ngModel)]="hexModel" pattern="[0-9a-fA-F ]*" [ngModelOptions]="{standalone: true}"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label text-right stacked>Decimal</ion-label>
-    <ion-input text-right type="text" [(ngModel)]="decModel" [ngModelOptions]="{standalone: true}"></ion-input>
+    <ion-input text-right type="text" [(ngModel)]="decModel" pattern="[0-9 ]*" [ngModelOptions]="{standalone: true}"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label text-right stacked>Octal</ion-label>
-    <ion-input text-right type="text" [(ngModel)]="octModel" [ngModelOptions]="{standalone: true}"></ion-input>
+    <ion-input text-right type="text" [(ngModel)]="octModel" pattern="[0-7 ]*" [ngModelOptions]="{standalone: true}"></ion-input>
   </ion-item>
 </form>
+
+
+
 </ion-content>
