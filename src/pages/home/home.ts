@@ -30,11 +30,16 @@ export class HomePage
   // from: value base (2: binary, 8: octal, 10: decimal, 16: hexadecimal)
   private Convert(value, from)
   {
-    
-  // Remove spaces
-  value = value.split(' ').join('');
+    // Remove spaces
+    value = value.split(' ').join('');
 
-    if (parseInt(value, from) <= Number.MAX_SAFE_INTEGER)
+    var int = parseInt(value, from);
+
+    if (isNaN(int))
+    {
+      this.errorMsg = "";
+    }
+    else if (int <= Number.MAX_SAFE_INTEGER)
     {
       this.binStr = this.AddSpaces(parseInt(value, from).toString(2), 4);
       this.hexStr = this.AddSpaces(parseInt(value, from).toString(16), 4);
