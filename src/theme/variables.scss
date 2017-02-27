@@ -23,6 +23,9 @@ $font-path: "../assets/fonts";
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+$text-input-md-show-focus-highlight: false;
+$text-input-md-show-invalid-highlight: true;
+
 $colors: (
   primary:    #387ef5,
   secondary:  #32db64,
